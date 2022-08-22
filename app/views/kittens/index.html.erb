@@ -1,17 +1,6 @@
 <h2>All Kittens</h2>
 
-<%= link_to 'New Kitten', new_kitten_path %>
+<h4><%= link_to 'New Kitten', new_kitten_path %></h4>
 <% @kittens.each do |kitten| %>
-  <div class="kitten">
-    <p>Kitten</p>
-    <% %i[name age cuteness softness].each do |attribute| %>
-      <div class="attribute">
-        <%= attribute.to_s.titleize %>:
-        <%= kitten[attribute] %>
-      </div>
-    <% end %>
-    <div class="show"><%= link_to 'See This Kitten', kitten %></div>
-    <div class="edit"><%= link_to 'Edit This Kitten', edit_kitten_path(kitten) %></div>
-    <div class="delete"><%= link_to 'Delete This Kitten', kitten, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></div>
-  </div>
+  <div class="kitten"><%= link_to kitten.name, kitten %></div>
 <% end %>
