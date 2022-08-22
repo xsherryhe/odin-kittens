@@ -1,0 +1,6 @@
+<%= simple_form_for kitten do |form| %>
+  <% %i[name age cuteness softness].each do |attribute| %>
+    <%= form.input attribute %>
+  <% end %>
+  <%= form.submit %>
+<% end %>
